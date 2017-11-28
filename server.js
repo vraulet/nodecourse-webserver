@@ -21,10 +21,10 @@ app.use((request, response, next) => {
     next();
 });
 
-app.use((request, response, next) => {
-    response.render('maintenance.hbs');
+// app.use((request, response, next) => {
+//     response.render('maintenance.hbs');
     
-});
+// });
 
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
@@ -48,6 +48,12 @@ app.get('/', (request, response) => {
 app.get('/about', (request, response) => {
     response.render('about.hbs', {
         pageTitle: 'About page HBS'
+    });
+});
+
+app.get('/projects', (request, response) => {
+    response.render('projects.hbs', {
+        pageTitle: 'Projects page'
     });
 });
 
